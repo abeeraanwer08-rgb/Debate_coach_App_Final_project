@@ -30,7 +30,7 @@ Information, cross-examination, text/voice/video input, AI judging out of
 
 1. [Overview](#-overview)
    -  [Live Demo](#-live-demo)
-   - (#-overview)[The Problem It Solves, and For Whom](#the-problem-it-solves-and-for-whom
+   - (#-overview)- [The Problem It Solves, and For Whom](#the-problem-it-solves-and-for-whom)
 3. [Screenshots](#-screenshots)
 4. [Feature Summary](#-feature-summary)
 5. [Debate Formats](#-debate-formats)
