@@ -63,9 +63,7 @@ Information, cross-examination, text/voice/video input, AI judging out of
 19. [License](#-license)
 
 ---
-## Live Demo
 
-**Live URL:** [https://debate-coach-pro.lovable.app](https://debate-coach-pro.lovable.app)
 
 ## 📖 Overview
 
@@ -80,6 +78,10 @@ It was built as a single Node/Express backend (which talks to the Google
 Groq API) plus a **framework-free** HTML/CSS/JS frontend — no build step, no
 bundler, just three files (`index.html`, `style.css`, `script.js`) that a
 browser can run directly.
+
+## Live Demo
+
+**Live URL:** [https://debate-coach-pro.lovable.app](https://debate-coach-pro.lovable.app)
 
 ### The problem it solves, and for whom
 
