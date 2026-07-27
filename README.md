@@ -114,15 +114,15 @@ Here is what the application looks like in action.
 
 | | |
 |---|---|
-| **Setup — choose a format** <br/> ![Format selection](setup-format.jpeg) | **Line-up** <br/> ![Line-up](Line-up.jpeg) |
-| **Ready to Debate** <br/> ![Ready to Debate](ready_to_debate.jpeg) | **Motion** <br/> ![Motion](motion.jpeg) |
-| **Prep Time** <br/> ![Prep Time](prep_time.jpeg) | **Point of Information** <br/> ![POI](poi.jpeg) |
-| **Cross-Question LD** <br/> ![Cross Question](cross-question_ld.jpeg) | **Best Speaker** <br/> ![Best Speaker](best_speaker.jpeg) |
-| **Positions Announcement** <br/> ![Positions](positions_announcement.jpeg) | **Detailed Critique** <br/> ![Critique](detailed_critique.jpeg) |
-| **Speaker Scores** <br/> ![Speaker Scores](speaker-scores.jpeg) | **Ranking of Speakers** <br/> ![Ranking](ranking_of_speakers.jpeg) |
-| **Key Moments** <br/> ![Key Moments](key_moments.jpeg) | **Fallacy Library** <br/> ![Library](fallacy_library.jpeg) |
-| **Dashboard** <br/> ![Dashboard](dashboard.jpeg) | **History** <br/> ![History](history.jpeg) |
-| **Light Mode** <br/> ![Light Mode](light_mode.jpeg) | |
+| **Setup — choose a format** <br/> ![Format selection](setup-format.jpeg) | **Line-up** <br/> ![Line-up](Line-up.jfif) |
+| **Ready to Debate** <br/> ![Ready to Debate](ready_to_debate.jfif) | **Motion** <br/> ![Motion](motion.jfif) |
+| **Prep Time** <br/> ![Prep Time](prep_time.jfif) | **Point of Information** <br/> ![POI](poi.jfif) |
+| **Cross-Question LD** <br/> ![Cross Question](cross-question_ld.jfif) | **Best Speaker** <br/> ![Best Speaker](best_speaker.jfif) |
+| **Positions Announcement** <br/> ![Positions](positions_announcement.jfif) | **Detailed Critique** <br/> ![Critique](detailed_critique.jfif) |
+| **Speaker Scores** <br/> ![Speaker Scores](speaker-scores.jfif) | **Ranking of Speakers** <br/> ![Ranking](ranking_of_speakers.jfif) |
+| **Key Moments** <br/> ![Key Moments](key_moments.jfif) | **Fallacy Library** <br/> ![Library](fallacy_library.jfif) |
+| **Dashboard** <br/> ![Dashboard](dashboard.jfif) | **History** <br/> ![History](history.jfif) |
+| **Light Mode** <br/> ![Light Mode](light_mode.jfif) | |
 
 ---
 
