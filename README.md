@@ -114,15 +114,15 @@ Here is what the application looks like in action.
 
 | | |
 |---|---|
-| **Setup — choose a format** <br/> ![Format selection](screenshots/setup-format.jpeg) | **Line-up** <br/> ![Line-up](screenshots/Line-up.jpeg) |
-| **Ready to Debate** <br/> ![Ready to Debate](screenshots/ready_to_debate.jpeg) | **Motion** <br/> ![Motion](screenshots/motion.jpeg) |
-| **Prep Time** <br/> ![Prep Time](screenshots/prep_time.jpeg) | **Point of Information** <br/> ![POI](screenshots/poi.jpeg) |
-| **Cross-Question LD** <br/> ![Cross Question](screenshots/cross-question_ld.jpeg) | **Best Speaker** <br/> ![Best Speaker](screenshots/best_speaker.jpeg) |
-| **Positions Announcement** <br/> ![Positions](screenshots/positions_announcement.jpeg) | **Detailed Critique** <br/> ![Critique](screenshots/detailed_critique.jpeg) |
-| **Speaker Scores** <br/> ![Speaker Scores](screenshots/speaker-scores.jpeg) | **Ranking of Speakers** <br/> ![Ranking](screenshots/ranking_of_speakers.jpeg) |
-| **Key Moments** <br/> ![Key Moments](screenshots/key_moments.jpeg) | **Fallacy Library** <br/> ![Library](screenshots/fallacy_library.jpeg) |
-| **Dashboard** <br/> ![Dashboard](screenshots/dashboard.jpeg) | **History** <br/> ![History](screenshots/history.jpeg) |
-| **Light Mode** <br/> ![Light Mode](screenshots/light_mode.jpeg) | |
+| **Setup — choose a format** <br/> ![Format selection](setup-format.jpeg) | **Line-up** <br/> ![Line-up](Line-up.jpeg) |
+| **Ready to Debate** <br/> ![Ready to Debate](ready_to_debate.jpeg) | **Motion** <br/> ![Motion](motion.jpeg) |
+| **Prep Time** <br/> ![Prep Time](prep_time.jpeg) | **Point of Information** <br/> ![POI](poi.jpeg) |
+| **Cross-Question LD** <br/> ![Cross Question](cross-question_ld.jpeg) | **Best Speaker** <br/> ![Best Speaker](best_speaker.jpeg) |
+| **Positions Announcement** <br/> ![Positions](positions_announcement.jpeg) | **Detailed Critique** <br/> ![Critique](detailed_critique.jpeg) |
+| **Speaker Scores** <br/> ![Speaker Scores](speaker-scores.jpeg) | **Ranking of Speakers** <br/> ![Ranking](ranking_of_speakers.jpeg) |
+| **Key Moments** <br/> ![Key Moments](key_moments.jpeg) | **Fallacy Library** <br/> ![Library](fallacy_library.jpeg) |
+| **Dashboard** <br/> ![Dashboard](dashboard.jpeg) | **History** <br/> ![History](history.jpeg) |
+| **Light Mode** <br/> ![Light Mode](light_mode.jpeg) | |
 
 ---
 
