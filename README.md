@@ -212,45 +212,6 @@ A **1-on-1** debate centered on values, ethics, and philosophy — between an
   human/AI (see [Cross-Examination](#-cross-examination-lincoln-douglas-only)).
 - **Judging:** a single winning side (Affirmative or Negative) is declared.
 
----
-
-## 📚 In-App Format Guide
-
-Every detail above is also available **inside the app itself**, on its own
-**Guide tab** — no need to leave the page or dig through this README mid-round.
-Switch between British Parliamentary, Asian Parliamentary, and Lincoln-Douglas
-with a segmented picker, and each format shows:
-
-- **Team/bench breakdown** — every speaker's exact role and duties, grouped by team.
-- **Speaking order** — the full running order with per-speech timing.
-- **Question & Answer session** — POI rules for BP/Asian, or the two Cross-Examination blocks for LD, explained in the same terms used during a live round.
-- **Key concepts** — the format's core judging principles (e.g. BP's "closing teams must extend, not repeat" rule, or LD's value/value-criterion framing).
-
-### 🤖 Ask AI — a chatbot built into the Guide
-
-Below the static reference material sits a small **chat panel**: ask it
-anything — "What does the Government Whip do?", "How many POIs can I offer?",
-"What's the difference between BP and Asian Parliamentary?" — and it answers
-in 2–4 plain-English sentences.
-
-- **Grounded, not generic.** Every answer is generated with the *entire*
-  contents of `data/guide.json` (all 3 formats) injected into the system
-  prompt as reference material, so the bot answers from the same rules shown
-  above it rather than making things up. See `buildGuideAskPrompt` in
-  `utils/prompts.js` and the `POST /api/guide/ask` route in `server.js`.
-- **Format-aware.** It knows which format tab you're currently viewing and
-  prioritizes that one, but it can still answer cross-format comparison
-  questions using the full reference material.
-- **Real multi-turn memory.** The last few exchanges are sent back to Groq as
-  proper chat history (not just the reference text), so natural follow-ups
-  like "what about the DPM?" work correctly.
-- **On-topic by design.** The system prompt explicitly redirects anything
-  unrelated to debate formats/rules back on topic, rather than answering
-  off-scope questions.
-- **Suggested questions** are one click away, and a broom icon clears the
-  conversation and starts fresh.
-
----
 
 ## 👥 Lineup Modes — Who's Speaking
 
