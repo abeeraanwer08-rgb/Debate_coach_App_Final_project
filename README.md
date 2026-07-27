@@ -109,21 +109,22 @@ critiqued exactly as a real adjudicator would.
 ---
 
 
-## Screenshots
+## 📸 Screenshots
 
 Here is what the application looks like in action.
 
 | | |
 |---|---|
-| **Setup — choose a format** <br/> ![Format selection](setup-format.jpeg) | **Line-up** <br/> ![Line-up](Line-up.jfif) |
+| **Setup — Choose a Format** <br/> ![Format Selection](setup-format.jpeg) | **Line-up** <br/> ![Line-up](Line-up.jfif) |
 | **Ready to Debate** <br/> ![Ready to Debate](ready_to_debate.jfif) | **Motion** <br/> ![Motion](motion.jfif) |
 | **Prep Time** <br/> ![Prep Time](prep_time.jfif) | **Point of Information** <br/> ![POI](poi.jfif) |
-| **Cross-Question LD** <br/> ![Cross Question](cross-question_ld.jfif) | **Best Speaker** <br/> ![Best Speaker](best-speaker.jfif) |
+| **Cross-Question (LD)** <br/> ![Cross Question](cross-question_ld.jfif) | **Best Speaker** <br/> ![Best Speaker](best-speaker.jfif) |
 | **Positions Announcement** <br/> ![Positions](positions_announcement.jfif) | **Detailed Critique** <br/> ![Critique](detailed_critique.jfif) |
 | **Speaker Scores** <br/> ![Speaker Scores](speaker-scores.jfif) | **Ranking of Speakers** <br/> ![Ranking](ranking_of_speakers.jfif) |
 | **Key Moments** <br/> ![Key Moments](key_moments.jfif) | **Fallacy Library** <br/> ![Library](fallacy_library.jfif) |
 | **Dashboard** <br/> ![Dashboard](dashboard.jfif) | **History** <br/> ![History](history.jfif) |
-| **Light Mode** <br/> ![Light Mode](light_mode.jfif) | || **Select Number of Human Speakers** <br/> ![Select Human Speakers](select_num_of_human_speaker.jfif) | **Export Result** <br/> ![Export Result](export_result.jfif) |
+| **Light Mode** <br/> ![Light Mode](light_mode.jfif) | **Select Number of Human Speakers** <br/> ![Select Human Speakers](select_num_of_human_speaker.jfif) |
+| **Export Result** <br/> ![Export Result](export_result.jfif) | |
 
 ---
 
