@@ -101,36 +101,28 @@ BP round solo (AI fills every other seat), or a small group fill in just the
 seats they have people for — and either way, the round is judged and
 critiqued exactly as a real adjudicator would.
 
-### 🔗 Live Demo
+## Live Demo
 
-> ⚠️ **Not yet deployed.** This build hasn't been pushed to a public URL yet.
-> Deploy it (the included `vercel.json` makes this a one-command Vercel
-> deploy — see [Getting Started](#-getting-started)) and put the link here
-> before submitting:
->
-> **Live URL:** `https://<your-deployment>.vercel.app` ← replace this line
->
-> Until then, see [Getting Started](#-getting-started) to run it locally.
+**Live URL:** [https://debate-coach-pro.lovable.app](https://debate-coach-pro.lovable.app)
 
 ---
 
-## 📸 Screenshots
 
-> **Note for reviewers/graders:** the images below are placeholders. Capture
-> your own screenshots while using the app and drop them into the
-> `/screenshots` folder using the exact filenames referenced here — every
-> image in this README will then render automatically.
+## Screenshots
+
+Here is what the application looks like in action.
 
 | | |
 |---|---|
-| **Setup — choose a format** <br/> ![Format selection](setup-format.jpeg) | **Setup — lineup & roster** <br/> ![Lineup selection](setup-lineup.jpeg) |
-| **In-app Format Guide** <br/> ![Format guide](screenshots/guide.jpeg) | **Live debate — timer & composer** <br/> ![Debate screen](debate-screen.jpeg) |
-| **Video input in action** <br/> ![Video recording](screenshots/debate-video.jpeg) | **Point of Information modal** <br/> ![POI modal](screenshots/poi-modal.jpeg) |
-| **Cross-examination (LD)** <br/> ![Cross-ex modal](screenshots/crossex-modal.jpeg) | **Results — BP team podium (1st–4th)** <br/> ![BP podium results](screenshots/results-bp-podium.jpeg) |
-| **Results — Best Speaker & rankings** <br/> ![Best speaker card](screenshots/results-best-speaker.jpeg) | **Critique session** <br/> ![Critique session](screenshots/critique-session.jpeg) |
-| **Dashboard & score charts** <br/> ![Dashboard](screenshots/dashboard.jpeg) | **History** <br/> ![History](screenshots/history.jpeg) |
-| **Fallacy library** <br/> ![Library](screenshots/library.jpeg) | **Dark / Light mode** <br/> ![Dark mode](screenshots/theme-dark.jpeg) |
-| **Light mode** <br/> ![Light mode](screenshots/theme-light.jpeg) | |
+| **Setup — choose a format** <br/> ![Format selection](setup-format.jpeg) | **Ready to Debate** <br/> ![Ready to Debate](readytodebate.jpeg) |
+| **Motion Setup** <br/> ![Motion](motion.jpeg) | **Review Screen** <br/> ![Review](review.jpeg) |
+| **Prep Time Timer** <br/> ![Prep Time](preptime.jpeg) | **Point of Information** <br/> ![POI](poi.jpeg) |
+| **Cross-Examination (LD)** <br/> ![Cross Ex](crossquestionld.jpeg) | **Best Speaker** <br/> ![Best Speaker](bestspeaker.jpeg) |
+| **Position Announcement** <br/> ![Positions](positionsannouncement.jpeg) | **Detailed Critique** <br/> ![Critique](detailedcritique.jpeg) |
+| **Speaker Score** <br/> ![Speaker Score](speakerscore.jpeg) | **Speaker Rankings** <br/> ![Rankings](rankingofspeakers.jpeg) |
+| **Key Moments** <br/> ![Key Moments](keymoments.jpeg) | **Fallacy Library** <br/> ![Library]fallacylibrary.jpeg) |
+| **Dashboard** <br/> ![Dashboard](dashboard.jpeg) | **History** <br/> ![History](history.jpeg) |
+| **Light Mode** <br/> ![Light Mode](lightmode.jpeg) | |
 
 ---
 
@@ -664,4 +656,4 @@ but not required.
 
 Built with 🎙️ for debaters who want to practice like it's the real thing.
 
-</div>
+</div>  update link section with actual lovale link , hmanize it remove _ from it and i will tell you th images names make placeholders for tat i will upload those images on github
