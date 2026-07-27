@@ -117,7 +117,7 @@ Here is what the application looks like in action.
 | **Setup — choose a format** <br/> ![Format selection](setup-format.jpeg) | **Line-up** <br/> ![Line-up](Line-up.jfif) |
 | **Ready to Debate** <br/> ![Ready to Debate](ready_to_debate.jfif) | **Motion** <br/> ![Motion](motion.jfif) |
 | **Prep Time** <br/> ![Prep Time](prep_time.jfif) | **Point of Information** <br/> ![POI](poi.jfif) |
-| **Cross-Question LD** <br/> ![Cross Question](cross-question_ld.jfif) | **Best Speaker** <br/> ![Best Speaker](best_speaker.jfif) |
+| **Cross-Question LD** <br/> ![Cross Question](cross-question_ld.jfif) | **Best Speaker** <br/> ![Best Speaker](best-speaker.jfif) |
 | **Positions Announcement** <br/> ![Positions](positions_announcement.jfif) | **Detailed Critique** <br/> ![Critique](detailed_critique.jfif) |
 | **Speaker Scores** <br/> ![Speaker Scores](speaker-scores.jfif) | **Ranking of Speakers** <br/> ![Ranking](ranking_of_speakers.jfif) |
 | **Key Moments** <br/> ![Key Moments](key_moments.jfif) | **Fallacy Library** <br/> ![Library](fallacy_library.jfif) |
