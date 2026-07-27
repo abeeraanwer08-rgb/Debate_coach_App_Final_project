@@ -58,13 +58,8 @@ Information, cross-examination, text/voice/video input, AI judging out of
 13. [Themes & Accessibility](#-themes--accessibility)
 14. [Tech Stack](#️-tech-stack)
 15. [Project Structure](#-project-structure)
-16. [Getting Started](#-getting-started)
-17. [Environment Variables](#-environment-variables)
-18. [API Reference](#-api-reference)
-19. [Keyboard Shortcuts](#⌨️-keyboard-shortcuts)
-20. [Known Limitations](#️-known-limitations)
-21. [Roadmap](#️-roadmap)
-22. [License](#-license)
+16. [Roadmap](#️-roadmap)
+17. [License](#-license)
 
 ---
 
