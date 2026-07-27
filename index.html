@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Podium — AI Debate Coach</title>
+<meta name="description" content="Practice British Parliamentary, Asian Parliamentary, or Lincoln-Douglas debate against AI, humans, or a mix of both — with live timers, POIs, scoring, and AI critique." />
+<meta name="theme-color" content="#667eea" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Podium — AI Debate Coach" />
+<meta property="og:description" content="Run a full competitive debate round — British Parliamentary, Asian Parliamentary, or Lincoln-Douglas — solo against AI, pass-and-play with friends, or watch two AI benches go at it." />
+<meta property="og:image" content="favicon.svg" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Podium — AI Debate Coach" />
+<meta name="twitter:description" content="Real formats, real timers, real AI judging." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="dark">
+
+<canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
+<div id="toast-stack" class="toast-stack" aria-live="polite"></div>
+
+<div class="loading-overlay" id="loading-overlay" hidden>
+  <div class="loading-card glass">
+    <div class="loading-spinner"></div>
+    <p class="loading-title" id="loading-overlay-title">Loading…</p>
+    <p class="loading-subtitle" id="loading-overlay-subtitle"></p>
+  </div>
+</div>
+
+<div class="bg-aurora" aria-hidden="true">
+  <span class="blob blob-a"></span>
+  <span class="blob blob-b"></span>
+  <span class="blob blob-c"></span>
+</div>
+
+<div id="app" class="app">
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar glass">
+    <div class="brand">
+      <span class="brand-mark"><i class="fa-solid fa-gavel"></i></span>
+      <span class="brand-name">Podium</span>
+    </div>
+
+    <nav class="tabs" role="tablist" aria-label="Main sections">
+      <button class="tab is-active" data-view="setup" role="tab" aria-selected="true"><i class="fa-solid fa-flag-checkered"></i> Debate</button>
+      <button class="tab" data-view="guide" role="tab" aria-selected="false"><i class="fa-solid fa-book-open"></i> Guide</button>
+      <button class="tab" data-view="history" role="tab" aria-selected="false"><i class="fa-solid fa-clock-rotate-left"></i> History</button>
+      <button class="tab" data-view="dashboard" role="tab" aria-selected="false"><i class="fa-solid fa-chart-line"></i> Dashboard</button>
+      <button class="tab" data-view="library" role="tab" aria-selected="false"><i class="fa-solid fa-book"></i> Library</button>
+    </nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="btn-shortcuts" title="Keyboard shortcuts" aria-label="Keyboard shortcuts"><i class="fa-solid fa-keyboard"></i></button>
+      <label class="theme-toggle" title="Toggle light / dark mode">
+        <input type="checkbox" id="btn-theme" aria-label="Toggle light or dark mode" />
+        <span class="theme-toggle-track"><i class="fa-solid fa-sun"></i><i class="fa-solid fa-moon"></i></span>
+      </label>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- ============ SETUP / WIZARD VIEW ============ -->
+    <section id="view-setup" class="view is-active">
+      <div class="wizard-shell">
+
+        <div class="wizard-hero">
+          <p class="eyebrow">British Parliamentary · Asian Parliamentary · Lincoln-Douglas</p>
+          <h1 class="hero-title">Step up to the podium.</h1>
+          <p class="hero-sub">Run a full competitive debate round — solo against AI, pass-and-play with friends, or sit back and watch two AI benches go at it. Real formats, real timers, real judging.</p>
+          <div class="hero-stats">
+            <div class="hero-stat"><span class="hero-stat-num">3</span><span class="hero-stat-label">formats</span></div>
+            <div class="hero-stat"><span class="hero-stat-num">6</span><span class="hero-stat-label">lineup modes</span></div>
+            <div class="hero-stat"><span class="hero-stat-num">100</span><span class="hero-stat-label">pt AI judging</span></div>
+          </div>
+        </div>
+
+        <div class="wizard-card glass">
+          <div class="wizard-progress" id="wizard-progress">
+            <span class="wp-dot is-active" data-step="1"><span>1</span>Format</span>
+            <span class="wp-dot" data-step="2"><span>2</span>Lineup</span>
+            <span class="wp-dot" data-step="3"><span>3</span>Roster</span>
+            <span class="wp-dot" data-step="4"><span>4</span>Motion</span>
+            <span class="wp-dot" data-step="5"><span>5</span>Review</span>
+          </div>
+
+          <!-- STEP 1 : FORMAT -->
+          <div class="wizard-step is-active" data-step="1">
+            <h2 class="card-title">Choose your format</h2>
+            <div class="style-grid" id="style-grid"></div>
+            <div class="wizard-nav">
+              <span></span>
+              <button class="btn btn-primary" id="step1-next" type="button" disabled>Next <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- STEP 2 : LINEUP / COMPOSITION -->
+          <div class="wizard-step" data-step="2">
+            <h2 class="card-title">Who's speaking?</h2>
+            <div class="composition-grid" id="composition-grid"></div>
+            <div class="field-group" id="human-count-group" hidden>
+              <span class="field-label">How many human speakers?</span>
+              <div class="segmented" id="human-count-picker"></div>
+            </div>
+            <div class="wizard-nav">
+              <button class="btn btn-ghost" id="step2-back" type="button"><i class="fa-solid fa-arrow-left"></i> Back</button>
+              <button class="btn btn-primary" id="step2-next" type="button" disabled>Next <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- STEP 3 : ROSTER -->
+          <div class="wizard-step" data-step="3">
+            <h2 class="card-title">Set your roster</h2>
+            <p class="field-hint">Assign a name to every human seat. AI seats are filled automatically.</p>
+            <div class="roster-editor" id="roster-editor"></div>
+            <div class="wizard-nav">
+              <button class="btn btn-ghost" id="step3-back" type="button"><i class="fa-solid fa-arrow-left"></i> Back</button>
+              <button class="btn btn-primary" id="step3-next" type="button">Next <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- STEP 4 : MOTION + OPTIONS -->
+          <div class="wizard-step" data-step="4">
+            <h2 class="card-title">Set the motion</h2>
+            <label class="field-label" for="input-motion">Motion / topic</label>
+            <div class="topic-row">
+              <input id="input-motion" class="text-input" type="text" placeholder="This House would…" maxlength="160" />
+              <button id="btn-random-motion" class="btn btn-ghost" type="button"><i class="fa-solid fa-dice"></i> Surprise me</button>
+            </div>
+
+            <div class="field-group">
+              <span class="field-label">AI opponent persona</span>
+              <select id="persona-picker" class="text-input select-input">
+                <option value="standard">Standard Debater</option>
+                <option value="scientist">The Scientist</option>
+                <option value="lawyer">The Lawyer</option>
+                <option value="politician">The Politician</option>
+                <option value="philosopher">The Philosopher</option>
+                <option value="journalist">The Journalist</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <span class="field-label">Difficulty</span>
+              <div class="segmented" id="difficulty-picker">
+                <button class="segment" data-value="beginner" type="button">Beginner</button>
+                <button class="segment is-active" data-value="intermediate" type="button">Intermediate</button>
+                <button class="segment" data-value="advanced" type="button">Advanced</button>
+              </div>
+            </div>
+
+            <div class="field-group" id="asian-length-group" hidden>
+              <span class="field-label">Main speech length</span>
+              <div class="segmented" id="asian-length-picker">
+                <button class="segment" data-value="300" type="button">5:00</button>
+                <button class="segment is-active" data-value="420" type="button">7:00</button>
+              </div>
+            </div>
+
+            <div class="field-group toggle-row">
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggle-prep" checked />
+                <span class="toggle-track"></span>
+                <span>15-minute prep time before the round</span>
+              </label>
+            </div>
+            <div class="field-group toggle-row">
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggle-ai-voice" checked />
+                <span class="toggle-track"></span>
+                <span>AI speakers deliver their speeches aloud (text-to-speech)</span>
+              </label>
+            </div>
+            <div class="field-group toggle-row">
+              <label class="toggle-switch">
+                <input type="checkbox" id="toggle-practice" />
+                <span class="toggle-track"></span>
+                <span>Practice mode — let me ask AI for suggestions mid-round</span>
+              </label>
+            </div>
+
+            <div class="wizard-nav">
+              <button class="btn btn-ghost" id="step4-back" type="button"><i class="fa-solid fa-arrow-left"></i> Back</button>
+              <button class="btn btn-primary" id="step4-next" type="button" disabled>Next <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- STEP 5 : REVIEW -->
+          <div class="wizard-step" data-step="5">
+            <h2 class="card-title">Ready to debate</h2>
+            <div class="review-summary" id="review-summary"></div>
+            <div class="wizard-nav">
+              <button class="btn btn-ghost" id="step5-back" type="button"><i class="fa-solid fa-arrow-left"></i> Back</button>
+              <button class="btn btn-primary btn-glow" id="btn-start-debate" type="button"><i class="fa-solid fa-play"></i> Start the round</button>
+            </div>
+            <p class="setup-note" id="key-warning" hidden><i class="fa-solid fa-triangle-exclamation"></i> No Groq API key detected on the server. AI speakers, POIs, judging, and critique need one — add it to <code>.env</code> and restart. See the README.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PREP VIEW ============ -->
+    <section id="view-prep" class="view">
+      <div class="prep-shell glass">
+        <p class="eyebrow">Prep time</p>
+        <h2 class="card-title">Get your case in order</h2>
+        <p class="hero-sub" id="prep-motion-label"></p>
+        <div class="prep-timer-wrap">
+          <svg viewBox="0 0 200 200" class="prep-ring">
+            <circle cx="100" cy="100" r="88" class="ring-track" />
+            <circle cx="100" cy="100" r="88" class="ring-progress" id="prep-ring-progress" />
+          </svg>
+          <span class="prep-timer-display" id="prep-timer-display">15:00</span>
+        </div>
+        <button class="btn btn-primary btn-glow" id="btn-skip-prep" type="button"><i class="fa-solid fa-forward"></i> Skip prep, start now</button>
+      </div>
+    </section>
+
+    <!-- ============ DEBATE VIEW ============ -->
+    <section id="view-debate" class="view">
+      <div class="debate-grid">
+
+        <aside class="debate-sidebar glass" id="roster-sidebar">
+          <h3 class="sidebar-title"><i class="fa-solid fa-users"></i> Lineup</h3>
+          <div id="live-roster" class="live-roster"></div>
+          <h3 class="sidebar-title"><i class="fa-solid fa-scale-balanced"></i> Team standing</h3>
+          <div id="team-scores" class="team-scores"></div>
+        </aside>
+
+        <div class="debate-main glass">
+          <div class="debate-header">
+            <div class="debate-header-info">
+              <p class="debate-topic" id="debate-motion-label">Motion</p>
+              <p class="debate-meta" id="debate-meta-label">Speaker 1 of 8</p>
+            </div>
+            <button class="btn btn-ghost btn-sm" id="btn-end-debate-early" type="button">End round</button>
+          </div>
+
+          <div class="speaker-banner" id="speaker-banner">
+            <div class="speaker-banner-avatar" id="speaker-banner-avatar"><i class="fa-solid fa-user"></i></div>
+            <div class="speaker-banner-text">
+              <p class="speaker-banner-name" id="speaker-banner-name">—</p>
+              <p class="speaker-banner-role" id="speaker-banner-role">—</p>
+            </div>
+            <button class="icon-btn" id="btn-announce-tts" title="Read announcement aloud" aria-label="Read announcement aloud"><i class="fa-solid fa-volume-high"></i></button>
+          </div>
+
+          <div class="timer-stage">
+            <svg viewBox="0 0 220 220" class="timer-ring" id="timer-ring">
+              <circle cx="110" cy="110" r="96" class="ring-track" />
+              <circle cx="110" cy="110" r="96" class="ring-progress" id="timer-ring-progress" />
+            </svg>
+            <div class="timer-center">
+              <span class="timer-display" id="timer-display">7:00</span>
+              <span class="timer-sub" id="timer-sub">speaking time</span>
+            </div>
+            <button class="poi-btn" id="btn-raise-poi" type="button" hidden><i class="fa-solid fa-hand"></i> Raise POI</button>
+          </div>
+
+          <div class="ai-typing-indicator" id="ai-typing-indicator" hidden>
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span id="ai-typing-label">AI is composing a speech…</span>
+            <button class="btn btn-ghost btn-sm" id="btn-skip-ai" type="button">Skip to full speech</button>
+          </div>
+
+          <div class="composer" id="composer">
+            <div class="input-tabs" id="input-tabs">
+              <button class="input-tab is-active" data-mode="text" type="button"><i class="fa-solid fa-keyboard"></i> Text</button>
+              <button class="input-tab" data-mode="voice" type="button"><i class="fa-solid fa-microphone"></i> Voice</button>
+              <button class="input-tab" data-mode="video" type="button"><i class="fa-solid fa-video"></i> Video</button>
+            </div>
+
+            <div class="composer-scan-wrap">
+              <div class="composer-highlight" id="composer-highlight" aria-hidden="true"></div>
+              <textarea id="composer-input" class="composer-input" rows="6" placeholder="Deliver your speech… fallacies get flagged as you go." maxlength="4000"></textarea>
+            </div>
+
+            <div class="video-input-wrap" id="video-input-wrap" hidden>
+              <video id="video-preview" autoplay muted playsinline></video>
+              <div class="video-controls">
+                <button class="btn btn-ghost btn-sm" id="btn-video-toggle" type="button"><i class="fa-solid fa-circle-dot"></i> Start recording</button>
+                <span class="rec-indicator" id="rec-indicator" hidden><i class="fa-solid fa-circle"></i> Recording</span>
+              </div>
+            </div>
+
+            <div class="composer-row">
+              <div class="composer-live-flags" id="composer-live-flags"></div>
+              <div class="composer-buttons">
+                <span class="word-count" id="word-count">0 words</span>
+                <button class="icon-btn" id="btn-mic" title="Voice input" aria-label="Voice input" hidden><i class="fa-solid fa-microphone"></i></button>
+                <button class="icon-btn" id="btn-suggest" title="Ask AI for a suggestion" aria-label="Ask AI for a suggestion" hidden><i class="fa-solid fa-lightbulb"></i></button>
+                <button class="btn btn-primary" id="btn-send-speech" type="button">Send speech <i class="fa-solid fa-paper-plane"></i></button>
+              </div>
+            </div>
+            <div class="suggestion-panel" id="suggestion-panel" hidden></div>
+          </div>
+
+          <div class="glass sidebar-card" id="fallacy-feed-card">
+            <h3 class="sidebar-title"><i class="fa-solid fa-triangle-exclamation"></i> Fallacy feed</h3>
+            <div id="fallacy-feed-live" class="fallacy-feed">
+              <p class="empty-note">Nothing flagged yet.</p>
+            </div>
+          </div>
+
+          <div class="transcript" id="transcript-log" aria-live="polite"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ RESULTS VIEW ============ -->
+    <section id="view-results" class="view">
+      <div class="results-shell">
+
+        <div class="winner-banner glass" id="winner-banner">
+          <div class="trophy-anim"><i class="fa-solid fa-trophy"></i></div>
+          <p class="eyebrow" id="results-motion-label">Motion</p>
+          <h2 class="winner-title" id="winner-title">Winning team</h2>
+          <p class="winner-reason" id="winner-reason"></p>
+        </div>
+
+        <div class="best-speaker-card glass" id="best-speaker-card">
+          <div class="best-speaker-badge"><i class="fa-solid fa-medal"></i> Best Speaker</div>
+          <p class="best-speaker-name" id="best-speaker-name">—</p>
+          <p class="best-speaker-meta" id="best-speaker-meta"></p>
+          <div class="best-speaker-score" id="best-speaker-score">0<span>/100</span></div>
+          <p class="best-speaker-reason" id="best-speaker-reason"></p>
+        </div>
+
+        <div class="team-podium-card glass" id="team-podium-card" hidden>
+          <h3 class="sidebar-title"><i class="fa-solid fa-ranking-star"></i> Team ranking — 1st to 4th</h3>
+          <p class="field-hint">British Parliamentary ranks all four benches independently — a Closing team can easily outrank an Opening team on the same side.</p>
+          <div class="podium-stage" id="podium-stage"></div>
+        </div>
+
+        <div class="glass results-card">
+          <h3 class="sidebar-title"><i class="fa-solid fa-ranking-star"></i> Speaker rankings &amp; scores</h3>
+          <div id="rankings-list" class="rankings-list"></div>
+        </div>
+
+        <div class="glass results-card">
+          <h3 class="sidebar-title"><i class="fa-solid fa-chart-simple"></i> Score breakdown</h3>
+          <p class="field-hint">Content 40% · Strategy 30% · Style 20% · Rebuttal 10%</p>
+          <div id="score-breakdown-list" class="score-breakdown-list"></div>
+        </div>
+
+        <div class="results-actions glass">
+          <button class="btn btn-primary btn-glow" id="btn-goto-critique" type="button"><i class="fa-solid fa-comment-dots"></i> Go to critique session</button>
+          <button class="btn btn-ghost" id="btn-export-txt" type="button"><i class="fa-solid fa-file-lines"></i> Export transcript</button>
+          <button class="btn btn-ghost" id="btn-print" type="button"><i class="fa-solid fa-file-pdf"></i> Print / save as PDF</button>
+          <button class="btn btn-ghost" id="btn-share" type="button"><i class="fa-solid fa-share-nodes"></i> Share result</button>
+          <button class="btn btn-ghost" id="btn-new-debate" type="button"><i class="fa-solid fa-rotate-right"></i> New round</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CRITIQUE VIEW ============ -->
+    <section id="view-critique" class="view">
+      <div class="critique-shell">
+
+        <div class="critique-head glass">
+          <div>
+            <p class="eyebrow">Critique session</p>
+            <h2 class="card-title">7-minute debrief</h2>
+          </div>
+          <div class="critique-clock-wrap">
+            <span class="critique-clock" id="critique-clock">7:00</span>
+            <button class="btn btn-ghost btn-sm" id="btn-skip-critique-timer" type="button">Skip ambience</button>
+          </div>
+        </div>
+
+        <div class="critique-best-banner glass" id="critique-best-banner">
+          <i class="fa-solid fa-crown"></i>
+          <span id="critique-best-speaker-line">—</span>
+        </div>
+
+        <div class="glass results-card">
+          <h3 class="sidebar-title"><i class="fa-solid fa-table-list"></i> Speaker scoreboard</h3>
+          <div id="critique-scoreboard" class="critique-scoreboard"></div>
+        </div>
+
+        <div class="glass results-card">
+          <h3 class="sidebar-title"><i class="fa-solid fa-magnifying-glass"></i> Overall analysis</h3>
+          <p id="critique-overall" class="critique-overall typewriter"></p>
+        </div>
+
+        <div class="glass results-card">
+          <h3 class="sidebar-title"><i class="fa-solid fa-people-arrows"></i> Per-speaker feedback</h3>
+          <div id="critique-per-speaker" class="critique-per-speaker"></div>
+        </div>
+
+        <div class="glass results-card">
+          <h3 class="sidebar-title"><i class="fa-solid fa-star"></i> Key moments</h3>
+          <div id="critique-key-moments" class="key-moments"></div>
+        </div>
+
+        <div class="glass results-card">
+          <h3 class="sidebar-title"><i class="fa-solid fa-list-check"></i> Improvement tips</h3>
+          <ol class="bullet-list numbered" id="critique-tips"></ol>
+        </div>
+
+        <div class="glass results-card" id="critique-video-card" hidden>
+          <h3 class="sidebar-title"><i class="fa-solid fa-video"></i> Video &amp; body language</h3>
+          <div id="critique-video-analysis"></div>
+        </div>
+
+        <div class="results-actions glass">
+          <button class="btn btn-ghost" id="btn-back-to-results" type="button"><i class="fa-solid fa-arrow-left"></i> Back to results</button>
+          <button class="btn btn-primary" id="btn-new-debate-2" type="button"><i class="fa-solid fa-rotate-right"></i> New round</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HISTORY VIEW ============ -->
+    <!-- ============ GUIDE VIEW ============ -->
+    <section id="view-guide" class="view">
+      <div class="guide-shell">
+        <div class="guide-head glass">
+          <div>
+            <p class="eyebrow">Format guide</p>
+            <h2 class="card-title">Rules, roles &amp; Q&amp;A sessions</h2>
+            <p class="field-hint">Everything you need to know before you step up to the podium — team structure, speaker responsibilities, and how the question-and-answer session works in each format.</p>
+          </div>
+          <div class="segmented" id="guide-format-picker">
+            <button class="segment is-active" data-format="bp" type="button">British Parliamentary</button>
+            <button class="segment" data-format="asian" type="button">Asian Parliamentary</button>
+            <button class="segment" data-format="ld" type="button">Lincoln-Douglas</button>
+          </div>
+        </div>
+        <div id="guide-content"></div>
+
+        <div class="glass guide-section guide-chat-card">
+          <h3 class="sidebar-title"><i class="fa-solid fa-robot"></i> Ask AI about debate formats</h3>
+          <p class="field-hint">Ask about roles, timing, POIs, cross-examination, or how the formats compare — answers stay grounded in this guide.</p>
+
+          <div class="guide-chat-suggestions" id="guide-chat-suggestions"></div>
+
+          <div class="guide-chat-messages" id="guide-chat-messages">
+            <div class="guide-chat-msg ai">Hi! Ask me anything about British Parliamentary, Asian Parliamentary, or Lincoln-Douglas — roles, timing, POIs, cross-ex, whatever you're unsure about.</div>
+          </div>
+
+          <div class="guide-chat-input-row">
+            <input type="text" id="guide-chat-input" class="text-input" placeholder="e.g. What's the difference between BP and Asian Parliamentary?" maxlength="300" />
+            <button class="icon-btn" id="guide-chat-clear" title="Clear chat" aria-label="Clear chat" type="button"><i class="fa-solid fa-broom"></i></button>
+            <button class="btn btn-primary" id="guide-chat-send" type="button"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-history" class="view">
+      <div class="history-head">
+        <h2 class="card-title">Debate history</h2>
+        <div class="history-filters">
+          <select id="history-filter-style" class="text-input select-input">
+            <option value="all">All formats</option>
+            <option value="bp">British Parliamentary</option>
+            <option value="asian">Asian Parliamentary</option>
+            <option value="ld">Lincoln-Douglas</option>
+          </select>
+          <select id="history-filter-sort" class="text-input select-input">
+            <option value="recent">Most recent</option>
+            <option value="score">Highest score</option>
+          </select>
+        </div>
+      </div>
+      <div id="history-list" class="history-list"></div>
+      <p class="empty-note" id="history-empty" hidden>No rounds yet — finish a debate and it'll show up here.</p>
+    </section>
+
+    <!-- ============ DASHBOARD VIEW ============ -->
+    <section id="view-dashboard" class="view">
+      <div class="stat-cards" id="stat-cards"></div>
+      <div class="dashboard-grid">
+        <div class="glass dashboard-card">
+          <h3 class="sidebar-title">Score progression</h3>
+          <canvas id="chart-progress" height="220"></canvas>
+        </div>
+        <div class="glass dashboard-card">
+          <h3 class="sidebar-title">Score breakdown (average)</h3>
+          <canvas id="chart-breakdown" height="220"></canvas>
+        </div>
+      </div>
+      <div class="glass dashboard-card">
+        <h3 class="sidebar-title">Speaker performance tracker</h3>
+        <div id="speaker-tracker" class="speaker-tracker"></div>
+        <p class="empty-note" id="tracker-empty" hidden>Debate a few rounds to start tracking your role-by-role performance.</p>
+      </div>
+    </section>
+
+    <!-- ============ LIBRARY VIEW ============ -->
+    <section id="view-library" class="view">
+      <div class="library-head">
+        <h2 class="card-title">Fallacy library</h2>
+        <input id="library-search" class="text-input" type="search" placeholder="Search fallacies…" />
+      </div>
+      <div class="library-grid" id="library-grid"></div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>🎙️ <strong>Podium</strong> — AI Debate Coach · Powered by Groq · <span id="footer-year"></span></p>
+  </footer>
+</div>
+
+<!-- ============ MODALS ============ -->
+<div class="modal-overlay" id="shortcuts-modal" hidden>
+  <div class="modal glass" role="dialog" aria-label="Keyboard shortcuts">
+    <h3 class="card-title">Keyboard shortcuts</h3>
+    <ul class="shortcut-list">
+      <li><kbd>Enter</kbd> Send speech (when typing)</li>
+      <li><kbd>Shift</kbd>+<kbd>Enter</kbd> New line</li>
+      <li><kbd>Esc</kbd> Close dialogs</li>
+      <li><kbd>?</kbd> Toggle this dialog</li>
+    </ul>
+    <button class="btn btn-primary" id="btn-close-shortcuts" type="button">Close</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="poi-modal" hidden>
+  <div class="modal glass" role="dialog" aria-label="Point of information">
+    <h3 class="card-title" id="poi-modal-title">Point of Information</h3>
+    <div id="poi-modal-body"></div>
+    <div class="modal-actions" id="poi-modal-actions"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="crossex-modal" hidden>
+  <div class="modal glass" role="dialog" aria-label="Cross examination">
+    <h3 class="card-title">Cross-Examination</h3>
+    <div id="crossex-modal-body"></div>
+    <div class="modal-actions" id="crossex-modal-actions"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="confirm-modal" hidden>
+  <div class="modal glass" role="dialog" aria-label="Confirm">
+    <h3 class="card-title" id="confirm-modal-title">Are you sure?</h3>
+    <p id="confirm-modal-body"></p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="confirm-modal-cancel" type="button">Cancel</button>
+      <button class="btn btn-primary" id="confirm-modal-ok" type="button">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TEMPLATES ============ -->
+<template id="tpl-transcript-entry">
+  <article class="transcript-entry">
+    <header>
+      <span class="te-role"></span>
+      <span class="te-name"></span>
+      <span class="te-team"></span>
+    </header>
+    <p class="te-text"></p>
+    <div class="te-pois"></div>
+  </article>
+</template>
+
+<template id="tpl-fallacy-chip"><span class="fallacy-chip"></span></template>
+
+<template id="tpl-fallacy-card">
+  <article class="fallacy-card glass">
+    <div class="fallacy-card-head">
+      <h4 class="fallacy-card-name"></h4>
+      <span class="fallacy-card-category"></span>
+    </div>
+    <p class="fallacy-card-def"></p>
+    <p class="fallacy-card-example"></p>
+    <p class="fallacy-card-fix"></p>
+  </article>
+</template>
+
+<template id="tpl-stat-card">
+  <div class="glass stat-card">
+    <p class="stat-value"></p>
+    <p class="stat-label"></p>
+  </div>
+</template>
+
+<template id="tpl-history-item">
+  <button class="history-item glass" type="button">
+    <div class="history-item-main">
+      <p class="history-motion"></p>
+      <p class="history-meta"></p>
+    </div>
+    <span class="history-score"></span>
+  </button>
+</template>
+
+<template id="tpl-rank-row">
+  <div class="rank-row">
+    <span class="rank-medal"></span>
+    <div class="rank-info">
+      <p class="rank-name"></p>
+      <p class="rank-role"></p>
+    </div>
+    <div class="rank-score-wrap">
+      <div class="rank-bar"><span class="rank-bar-fill"></span></div>
+      <span class="rank-score"></span>
+    </div>
+  </div>
+</template>
+
+<template id="tpl-breakdown-card">
+  <div class="breakdown-card">
+    <p class="breakdown-name"></p>
+    <div class="breakdown-bars"></div>
+  </div>
+</template>
+
+<template id="tpl-breakdown-bar">
+  <div class="breakdown-bar-row">
+    <span class="bb-label"></span>
+    <div class="bb-track"><span class="bb-fill"></span></div>
+    <span class="bb-value"></span>
+  </div>
+</template>
+
+<template id="tpl-per-speaker-feedback">
+  <article class="ps-feedback glass">
+    <header>
+      <p class="ps-name"></p>
+      <span class="ps-score"></span>
+    </header>
+    <p><strong>Strengths:</strong> <span class="ps-strengths"></span></p>
+    <p><strong>Delivery:</strong> <span class="ps-delivery"></span></p>
+    <p><strong>Rebuttal work:</strong> <span class="ps-rebuttal"></span></p>
+    <p><strong>Improve:</strong> <span class="ps-improve"></span></p>
+  </article>
+</template>
+
+<template id="tpl-key-moment">
+  <div class="key-moment">
+    <span class="km-label"></span>
+    <p class="km-detail"></p>
+  </div>
+</template>
+
+<template id="tpl-suggestion-item"><div class="suggestion-item"><i class="fa-solid fa-lightbulb"></i><span></span></div></template>
+
+<template id="tpl-roster-item">
+  <div class="roster-item">
+    <span class="roster-item-role"></span>
+    <span class="roster-item-name"></span>
+    <span class="roster-item-badge"></span>
+  </div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

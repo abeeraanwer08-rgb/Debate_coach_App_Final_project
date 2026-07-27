@@ -1,0 +1,107 @@
+[
+  { "id": "ad-hominem", "flags": "i", "patterns": [
+    "\\b(you'?re|you are)\\s+(such an?\\s+|an?\\s+)?(idiot|stupid|dumb|fool|foolish|clueless|ignorant|moron|delusional)\\b",
+    "\\byou clearly (don'?t|do not) understand\\b",
+    "\\bwhat would you (even )?know about\\b",
+    "\\btypical of someone like you\\b"
+  ]},
+  { "id": "straw-man", "flags": "i", "patterns": [
+    "\\bso (you'?re|you are) saying\\b",
+    "\\bwhat you'?re really saying is\\b",
+    "\\bso basically you want\\b",
+    "\\bso what you mean is\\b"
+  ]},
+  { "id": "appeal-to-authority", "flags": "i", "patterns": [
+    "\\b(experts?|scientists?|studies|doctors?)\\s+(say|says|show|shows|prove|proves|agree)\\b(?!.*\\d)"
+  ]},
+  { "id": "false-dilemma", "flags": "i", "patterns": [
+    "\\beither .* or .*\\b(nothing|no other choice|none at all)\\b",
+    "\\byou'?re either with (us|me) or against\\b",
+    "\\bthere (are|is) only two (options|choices)\\b",
+    "\\bthe only two options (are|is)\\b"
+  ]},
+  { "id": "slippery-slope", "flags": "i", "patterns": [
+    "\\bwill (eventually |inevitably )?lead to\\b",
+    "\\bnext thing you know\\b",
+    "\\bslippery slope\\b",
+    "\\bif we allow this\\b[^.!?]{0,30}\\bsoon\\b",
+    "\\bonce we start .* there'?s no (stopping|end)\\b"
+  ]},
+  { "id": "circular-reasoning", "flags": "i", "patterns": [
+    "\\bbecause (it'?s|it is) (true|a fact|the law|right|correct)\\b",
+    "\\b(it'?s|it is) (true|right) because (it'?s|it is) (true|right)\\b",
+    "\\bthat'?s just how it is\\b"
+  ]},
+  { "id": "hasty-generalization", "flags": "i", "patterns": [
+    "\\b(all|every|everyone|no one|nobody)\\b[^.!?]{0,40}\\b(are|is|do|does|always|never)\\b",
+    "\\b(always|never)\\b[^.!?]{0,25}\\b(because|since)\\b"
+  ]},
+  { "id": "bandwagon", "flags": "i", "patterns": [
+    "\\b(everyone|everybody|most people)\\s+(believes?|thinks?|knows?|agrees?|is doing|are doing)\\b"
+  ]},
+  { "id": "appeal-to-emotion", "flags": "i", "patterns": [
+    "\\b(think about|imagine) (the|how)\\b[^.!?]{0,40}\\b(children|families|victims|suffer|suffering)\\b",
+    "\\b(heartbreaking|devastating|tragic)\\b"
+  ]},
+  { "id": "tu-quoque", "flags": "i", "patterns": [
+    "\\byou'?re one to talk\\b",
+    "\\blook who'?s talking\\b",
+    "\\byou do it too\\b",
+    "\\byou'?re just as guilty\\b"
+  ]},
+  { "id": "genetic-fallacy", "flags": "i", "patterns": [
+    "\\bconsider the source\\b",
+    "\\bcoming from (someone|a person) who\\b"
+  ]},
+  { "id": "no-true-scotsman", "flags": "i", "patterns": [
+    "\\bno (real|true) \\w+ would\\b",
+    "\\ba (real|true) \\w+ (always|never)\\b"
+  ]},
+  { "id": "begging-the-question", "flags": "i", "patterns": [
+    "\\bit'?s (obviously|clearly|simply) (true|a fact)\\b"
+  ]},
+  { "id": "post-hoc", "flags": "i", "patterns": [
+    "\\bright after .* (happened|occurred)\\b[^.!?]{0,30}\\b(caused|must have caused)\\b",
+    "\\bsince .* happened,?.*\\bmust have caused\\b"
+  ]},
+  { "id": "ad-populum", "flags": "i", "patterns": [
+    "\\bmost (citizens|people|voters)\\s+(support|believe|want)\\b"
+  ]},
+  { "id": "appeal-to-nature", "flags": "i", "patterns": [
+    "\\bit'?s (all )?natural,? so\\b",
+    "\\bbecause it'?s (natural|unnatural)\\b"
+  ]},
+  { "id": "anecdotal", "flags": "i", "patterns": [
+    "\\bmy (friend|grandfather|grandmother|cousin|uncle|aunt|neighbor|coworker)\\b",
+    "\\bi know (someone|a guy|a person) who\\b",
+    "\\bin my experience\\b"
+  ]},
+  { "id": "middle-ground", "flags": "i", "patterns": [
+    "\\bthe truth (is|must be) (probably )?(somewhere )?in the middle\\b",
+    "\\bboth sides have a point\\b"
+  ]},
+  { "id": "burden-of-proof", "flags": "i", "patterns": [
+    "\\byou can'?t prove (it'?s|it is) not\\b",
+    "\\bprove me wrong\\b"
+  ]},
+  { "id": "ad-ignorantiam", "flags": "i", "patterns": [
+    "\\bno one has proven\\b[^.!?]{0,30}\\b(false|wrong)\\b",
+    "\\bhasn'?t been proven (false|wrong)\\b"
+  ]},
+  { "id": "appeal-to-pity", "flags": "i", "patterns": [
+    "\\bhave (some )?sympathy\\b",
+    "\\bi'?ve worked so hard\\b",
+    "\\bplease understand how hard\\b"
+  ]},
+  { "id": "appeal-to-fear", "flags": "i", "patterns": [
+    "\\bif we don'?t .* (disaster|catastrophe)\\b",
+    "\\bwill be (catastrophic|a disaster)\\b"
+  ]},
+  { "id": "guilt-by-association", "flags": "i", "patterns": [
+    "\\bsounds like something .* (would say|proposed|once said)\\b"
+  ]},
+  { "id": "cherry-picking", "flags": "i", "patterns": [
+    "\\bignore (the )?(other|rest of the) (data|studies|evidence)\\b",
+    "\\bonly (study|data|evidence) that matters\\b"
+  ]}
+]

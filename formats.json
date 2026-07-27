@@ -1,0 +1,89 @@
+{
+  "bp": {
+    "id": "bp",
+    "name": "British Parliamentary",
+    "shortName": "BP",
+    "speakerCount": 8,
+    "teams": [
+      { "id": "og", "name": "Opening Government", "side": "gov", "bench": "opening" },
+      { "id": "oo", "name": "Opening Opposition", "side": "opp", "bench": "opening" },
+      { "id": "cg", "name": "Closing Government", "side": "gov", "bench": "closing" },
+      { "id": "co", "name": "Closing Opposition", "side": "opp", "bench": "closing" }
+    ],
+    "roleNames": {
+      "PM": "Prime Minister", "DPM": "Deputy Prime Minister",
+      "LO": "Leader of Opposition", "DLO": "Deputy Leader of Opposition",
+      "MG": "Member of Government", "MO": "Member of Opposition",
+      "GW": "Government Whip", "OW": "Opposition Whip"
+    },
+    "speakingOrder": [
+      { "role": "PM", "team": "og", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "LO", "team": "oo", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "DPM", "team": "og", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "DLO", "team": "oo", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "MG", "team": "cg", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "MO", "team": "co", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "GW", "team": "cg", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "OW", "team": "co", "duration": 420, "warning": 390, "type": "main" }
+    ],
+    "poi": { "enabled": true, "windowStart": 60, "windowEnd": 360, "duration": 15 }
+  },
+  "asian": {
+    "id": "asian",
+    "name": "Asian Parliamentary",
+    "shortName": "Asian Parli",
+    "speakerCount": 6,
+    "teams": [
+      { "id": "gov", "name": "Government", "side": "gov", "bench": "only" },
+      { "id": "opp", "name": "Opposition", "side": "opp", "bench": "only" }
+    ],
+    "roleNames": {
+      "PM": "Prime Minister", "DPM": "Deputy Prime Minister", "GW": "Government Whip",
+      "LO": "Leader of Opposition", "DLO": "Deputy Leader of Opposition", "OW": "Opposition Whip",
+      "LOR": "Leader of Opposition (Reply)", "PMR": "Prime Minister (Reply)"
+    },
+    "speakingOrder": [
+      { "role": "PM", "team": "gov", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "LO", "team": "opp", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "DPM", "team": "gov", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "DLO", "team": "opp", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "GW", "team": "gov", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "OW", "team": "opp", "duration": 420, "warning": 390, "type": "main" },
+      { "role": "LOR", "team": "opp", "duration": 240, "warning": 210, "type": "reply" },
+      { "role": "PMR", "team": "gov", "duration": 240, "warning": 210, "type": "reply" }
+    ],
+    "poi": { "enabled": true, "windowStart": 60, "windowEnd": 360, "duration": 15 }
+  },
+  "ld": {
+    "id": "ld",
+    "name": "Lincoln-Douglas",
+    "shortName": "LD",
+    "speakerCount": 2,
+    "teams": [
+      { "id": "aff", "name": "Affirmative", "side": "aff", "bench": "only" },
+      { "id": "neg", "name": "Negative", "side": "neg", "bench": "only" }
+    ],
+    "roleNames": {
+      "AC": "Affirmative Constructive", "CX1": "Cross-Examination", "NC": "Negative Constructive",
+      "CX2": "Cross-Examination", "AR1": "First Affirmative Rebuttal", "NR": "Negative Rebuttal",
+      "AR2": "Second Affirmative Rebuttal"
+    },
+    "speakingOrder": [
+      { "role": "AC", "team": "aff", "duration": 360, "warning": 330, "type": "constructive", "label": "Affirmative Constructive" },
+      { "role": "CX1", "team": "neg", "duration": 180, "warning": 0, "type": "crossex", "label": "Negative questions Affirmative" },
+      { "role": "NC", "team": "neg", "duration": 420, "warning": 390, "type": "constructive", "label": "Negative Constructive" },
+      { "role": "CX2", "team": "aff", "duration": 180, "warning": 0, "type": "crossex", "label": "Affirmative questions Negative" },
+      { "role": "AR1", "team": "aff", "duration": 240, "warning": 210, "type": "rebuttal", "label": "First Affirmative Rebuttal" },
+      { "role": "NR", "team": "neg", "duration": 360, "warning": 330, "type": "rebuttal", "label": "Negative Rebuttal" },
+      { "role": "AR2", "team": "aff", "duration": 180, "warning": 150, "type": "rebuttal", "label": "Second Affirmative Rebuttal" }
+    ],
+    "poi": { "enabled": false }
+  },
+  "scoring": {
+    "content": 0.4,
+    "strategy": 0.3,
+    "style": 0.2,
+    "rebuttal": 0.1
+  },
+  "prepSeconds": 900
+}

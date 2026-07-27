@@ -1,0 +1,227 @@
+[
+  {
+    "id": "ad-hominem",
+    "name": "Ad Hominem",
+    "category": "Relevance",
+    "definition": "Attacking the person making an argument instead of addressing the argument itself.",
+    "example": "\"You can't trust his opinion on the economy, he dropped out of college.\"",
+    "fix": "Respond to the substance of the claim, not the character or background of the person making it.",
+    "defaultSeverity": "severe"
+  },
+  {
+    "id": "straw-man",
+    "name": "Straw Man",
+    "category": "Relevance",
+    "definition": "Misrepresenting an opponent's argument in a weaker or more extreme form, then attacking that instead.",
+    "example": "\"She wants better school funding? So she just wants to throw unlimited money at the problem.\"",
+    "fix": "Restate the opponent's actual position accurately before responding to it.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "appeal-to-authority",
+    "name": "Appeal to Authority",
+    "category": "Evidence",
+    "definition": "Claiming something is true mainly because an authority figure or expert says so, without other supporting evidence.",
+    "example": "\"A famous actor says this diet works, so it must be effective.\"",
+    "fix": "Cite the actual evidence or reasoning the authority relies on, not just their title or fame.",
+    "defaultSeverity": "mild"
+  },
+  {
+    "id": "false-dilemma",
+    "name": "False Dilemma",
+    "category": "Structure",
+    "definition": "Presenting only two options when more possibilities actually exist.",
+    "example": "\"Either we ban the product completely, or we do nothing at all.\"",
+    "fix": "Acknowledge the middle-ground or alternative options between the two extremes.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "slippery-slope",
+    "name": "Slippery Slope",
+    "category": "Structure",
+    "definition": "Arguing that a small first step will inevitably lead to a chain of increasingly extreme, often unlikely, consequences.",
+    "example": "\"If we allow this one exception, soon there will be no rules left at all.\"",
+    "fix": "Show the actual causal mechanism connecting each step, or acknowledge the chain isn't guaranteed.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "circular-reasoning",
+    "name": "Circular Reasoning",
+    "category": "Structure",
+    "definition": "An argument where the conclusion is just a restatement of the premise, so it proves nothing new.",
+    "example": "\"This law is just, because it's the law.\"",
+    "fix": "Provide independent evidence for the premise that doesn't depend on the conclusion already being true.",
+    "defaultSeverity": "severe"
+  },
+  {
+    "id": "hasty-generalization",
+    "name": "Hasty Generalization",
+    "category": "Evidence",
+    "definition": "Drawing a broad conclusion from a small or unrepresentative sample.",
+    "example": "\"I met two rude tourists from that country, so people from there are rude.\"",
+    "fix": "Reference a larger, more representative body of evidence before generalizing.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "red-herring",
+    "name": "Red Herring",
+    "category": "Relevance",
+    "definition": "Introducing an unrelated topic to divert attention away from the original argument.",
+    "example": "\"Why worry about the budget deficit when crime rates are also a problem?\"",
+    "fix": "Stay on the original claim and address it directly before raising new topics.",
+    "defaultSeverity": "mild"
+  },
+  {
+    "id": "bandwagon",
+    "name": "Bandwagon",
+    "category": "Relevance",
+    "definition": "Arguing a claim is true or good because many people believe or do it.",
+    "example": "\"Everyone is investing in this, so it must be a good idea.\"",
+    "fix": "Provide evidence for the claim itself rather than pointing to its popularity.",
+    "defaultSeverity": "mild"
+  },
+  {
+    "id": "appeal-to-emotion",
+    "name": "Appeal to Emotion",
+    "category": "Relevance",
+    "definition": "Using emotional appeals in place of logical reasoning to persuade.",
+    "example": "\"Think about the poor families who will suffer if this bill fails!\"",
+    "fix": "Pair the emotional point with concrete evidence or reasoning that supports the claim.",
+    "defaultSeverity": "mild"
+  },
+  {
+    "id": "tu-quoque",
+    "name": "Tu Quoque",
+    "category": "Relevance",
+    "definition": "Dismissing an argument by pointing out the arguer's own hypocrisy, rather than addressing the argument.",
+    "example": "\"You say I should recycle more, but you drove here today.\"",
+    "fix": "Address whether the claim is true regardless of the arguer's own consistency.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "genetic-fallacy",
+    "name": "Genetic Fallacy",
+    "category": "Relevance",
+    "definition": "Judging an idea as true or false based on its origin rather than its current merits.",
+    "example": "\"That theory came from a controversial scientist, so it can't be right.\"",
+    "fix": "Evaluate the claim on its current evidence, independent of where it originated.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "no-true-scotsman",
+    "name": "No True Scotsman",
+    "category": "Structure",
+    "definition": "Redefining a group to exclude counterexamples after a generalization about that group is challenged.",
+    "example": "\"No real environmentalist would ever fly on a plane.\"",
+    "fix": "Keep the definition of the group fixed instead of adjusting it to dodge counterexamples.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "begging-the-question",
+    "name": "Begging the Question",
+    "category": "Structure",
+    "definition": "Assuming the truth of the conclusion within the premise itself.",
+    "example": "\"Free speech is important because people should be free to say what they want.\"",
+    "fix": "Support the premise with a reason that doesn't already assume the conclusion.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "post-hoc",
+    "name": "Post Hoc",
+    "category": "Evidence",
+    "definition": "Assuming that because one event followed another, the first must have caused the second.",
+    "example": "\"Crime dropped after the new mayor took office, so the mayor caused the drop.\"",
+    "fix": "Rule out other possible causes or coincidences before claiming causation.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "ad-populum",
+    "name": "Ad Populum",
+    "category": "Relevance",
+    "definition": "Appealing to widespread popular opinion as if it were proof of truth.",
+    "example": "\"Most citizens support this policy, so it must be the right choice.\"",
+    "fix": "Separate what is popular from what is actually supported by evidence.",
+    "defaultSeverity": "mild"
+  },
+  {
+    "id": "appeal-to-nature",
+    "name": "Appeal to Nature",
+    "category": "Evidence",
+    "definition": "Claiming something is good or correct because it is 'natural', or bad because it is 'unnatural'.",
+    "example": "\"This remedy is natural, so it has to be safer than the manufactured medicine.\"",
+    "fix": "Evaluate safety and effectiveness with evidence, not with how 'natural' something sounds.",
+    "defaultSeverity": "mild"
+  },
+  {
+    "id": "anecdotal",
+    "name": "Anecdotal Fallacy",
+    "category": "Evidence",
+    "definition": "Using a single personal story or isolated example in place of solid evidence.",
+    "example": "\"My grandfather smoked his whole life and lived to 90, so smoking isn't that dangerous.\"",
+    "fix": "Bring in broader data or studies rather than relying on one story.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "middle-ground",
+    "name": "Middle Ground",
+    "category": "Structure",
+    "definition": "Assuming that the truth must lie exactly between two opposing positions.",
+    "example": "\"One side says the treatment works, the other says it doesn't, so it must work half the time.\"",
+    "fix": "Judge each position on its own evidence rather than assuming a compromise is correct.",
+    "defaultSeverity": "mild"
+  },
+  {
+    "id": "burden-of-proof",
+    "name": "Burden of Proof",
+    "category": "Structure",
+    "definition": "Shifting the responsibility of proof onto the other party instead of supporting one's own claim.",
+    "example": "\"You can't prove this policy won't work, so we should assume it will.\"",
+    "fix": "Provide positive evidence for your own claim rather than demanding the other side disprove it.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "ad-ignorantiam",
+    "name": "Ad Ignorantiam",
+    "category": "Evidence",
+    "definition": "Arguing a claim is true because it has not been proven false, or vice versa.",
+    "example": "\"No one has proven this isn't dangerous, so we should assume it is.\"",
+    "fix": "Base the claim on positive evidence rather than an absence of disproof.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "appeal-to-pity",
+    "name": "Appeal to Pity",
+    "category": "Relevance",
+    "definition": "Attempting to win an argument by evoking sympathy rather than presenting evidence.",
+    "example": "\"You have to agree with me, I've worked so hard on this and it means everything to me.\"",
+    "fix": "Support the claim with facts, and keep sympathy separate from the argument's merit.",
+    "defaultSeverity": "mild"
+  },
+  {
+    "id": "appeal-to-fear",
+    "name": "Appeal to Fear",
+    "category": "Relevance",
+    "definition": "Using fear or intimidation instead of evidence to push a conclusion.",
+    "example": "\"If we don't pass this law immediately, disaster is guaranteed.\"",
+    "fix": "Provide evidence for the likelihood of the feared outcome rather than just invoking fear.",
+    "defaultSeverity": "moderate"
+  },
+  {
+    "id": "guilt-by-association",
+    "name": "Guilt by Association",
+    "category": "Relevance",
+    "definition": "Discrediting an idea by linking it to a disliked person or group, rather than addressing it directly.",
+    "example": "\"That policy sounds a lot like something an extremist group once proposed, so it must be bad.\"",
+    "fix": "Assess the idea on its own merits, independent of who else may have suggested it.",
+    "defaultSeverity": "severe"
+  },
+  {
+    "id": "cherry-picking",
+    "name": "Cherry Picking",
+    "category": "Evidence",
+    "definition": "Selecting only the data or examples that support a conclusion while ignoring evidence that contradicts it.",
+    "example": "\"This one study supports my view, so I'll ignore the ten others that don't.\"",
+    "fix": "Address the full body of evidence, including data that complicates or contradicts the claim.",
+    "defaultSeverity": "moderate"
+  }
+]

@@ -1,0 +1,201 @@
+{
+  "bp": {
+    "id": "bp",
+    "name": "British Parliamentary (BP)",
+    "tagline": "4 teams, 8 speakers, ranked 1st to 4th.",
+    "summary": "In British Parliamentary debate, there are 4 teams and 8 speakers. Two teams share the Government side and two share the Opposition side, but every team is judged and ranked independently.",
+    "benches": [
+      {
+        "team": "Opening Government (OG)",
+        "speakers": [
+          {
+            "role": "1. Prime Minister (PM)",
+            "duties": ["Defines the motion.", "Sets up the Government's case.", "Presents the main arguments.", "Explains why the policy or position should be accepted."]
+          },
+          {
+            "role": "2. Deputy Prime Minister (DPM)",
+            "duties": ["Rebuts the Opening Opposition.", "Rebuilds and strengthens the Government case.", "Adds new arguments (not a new extension)."]
+          }
+        ]
+      },
+      {
+        "team": "Opening Opposition (OO)",
+        "speakers": [
+          {
+            "role": "3. Leader of Opposition (LO)",
+            "duties": ["Responds to the PM's case.", "Challenges the definition if necessary.", "Presents the Opposition's main arguments."]
+          },
+          {
+            "role": "4. Deputy Leader of Opposition (DLO)",
+            "duties": ["Rebuts the Government's arguments.", "Rebuilds the Opposition case.", "Adds new supporting arguments."]
+          }
+        ]
+      },
+      {
+        "team": "Closing Government (CG)",
+        "speakers": [
+          {
+            "role": "5. Member of Government (MG)",
+            "duties": ["Introduces a new extension (a significant new contribution that wasn't made by Opening Government).", "Rebuts Opposition.", "Shows why Closing Government deserves to rank above Opening Government."]
+          },
+          {
+            "role": "6. Government Whip (GW)",
+            "duties": ["Summarizes the entire debate from the Government side.", "Compares all teams.", "Explains why Closing Government should win.", "Must not introduce new substantive arguments."]
+          }
+        ]
+      },
+      {
+        "team": "Closing Opposition (CO)",
+        "speakers": [
+          {
+            "role": "7. Member of Opposition (MO)",
+            "duties": ["Introduces a new extension for the Opposition.", "Rebuts Government.", "Shows why Closing Opposition is stronger than Opening Opposition."]
+          },
+          {
+            "role": "8. Opposition Whip (OW)",
+            "duties": ["Summarizes the debate from the Opposition side.", "Compares all four teams.", "Explains why Closing Opposition should win.", "Must not introduce new substantive arguments."]
+          }
+        ]
+      }
+    ],
+    "speakingOrder": [
+      ["Prime Minister (PM)", "7 min"], ["Leader of Opposition (LO)", "7 min"],
+      ["Deputy Prime Minister (DPM)", "7 min"], ["Deputy Leader of Opposition (DLO)", "7 min"],
+      ["Member of Government (MG)", "7 min"], ["Member of Opposition (MO)", "7 min"],
+      ["Government Whip (GW)", "7 min"], ["Opposition Whip (OW)", "7 min"]
+    ],
+    "qanda": {
+      "title": "Points of Information (POIs) — the Q&A of BP",
+      "explanation": "A POI is a short interjection offered by the opposing bench during a speaker's speech. The speaker in control of the floor may accept it and respond, or decline it and continue.",
+      "rules": [
+        "Open from the 1-minute mark to the 6-minute mark of each 7-minute speech — the first and last minute are \"protected\" and no POIs are allowed.",
+        "Each POI should take no more than 15 seconds to offer.",
+        "The speaker decides whether to accept or decline — declining is completely acceptable, but engaging with one or two sharp POIs can strengthen a speech.",
+        "POIs are not offered during Whip speeches (Government Whip and Opposition Whip)."
+      ]
+    },
+    "keyConcepts": [
+      "Opening teams build the foundation of the debate.",
+      "Closing teams must provide a meaningful extension, not repeat earlier arguments.",
+      "Whip speakers summarize, weigh, and compare arguments rather than introducing new ones.",
+      "Teams are ranked 1st to 4th (not simply Government vs Opposition) — judges decide which team contributed the most to the debate."
+    ]
+  },
+
+  "asian": {
+    "id": "asian",
+    "name": "Asian Parliamentary (AP)",
+    "tagline": "2 teams, 3 speakers per team.",
+    "summary": "In Asian Parliamentary debate, there are 2 teams — Government and Opposition — with 3 speakers per team (6 speakers total).",
+    "benches": [
+      {
+        "team": "Government Bench",
+        "speakers": [
+          {
+            "role": "1. Prime Minister (PM)",
+            "duties": ["Defines the motion.", "Sets the debate framework.", "Presents the Government's main case and arguments."]
+          },
+          {
+            "role": "2. Deputy Prime Minister (DPM)",
+            "duties": ["Rebuts the Opposition's arguments.", "Rebuilds and strengthens the Government case.", "Introduces additional supporting arguments."]
+          },
+          {
+            "role": "3. Government Whip (GW)",
+            "duties": ["Summarizes the debate from the Government side.", "Weighs and compares the major clashes.", "Explains why the Government should win.", "Does not introduce new substantive arguments."]
+          }
+        ]
+      },
+      {
+        "team": "Opposition Bench",
+        "speakers": [
+          {
+            "role": "1. Leader of Opposition (LO)",
+            "duties": ["Responds to the Government's case.", "Challenges the motion, definition, or framework if necessary.", "Presents the Opposition's main arguments."]
+          },
+          {
+            "role": "2. Deputy Leader of Opposition (DLO)",
+            "duties": ["Rebuts the Government's arguments.", "Rebuilds the Opposition case.", "Adds further supporting arguments."]
+          },
+          {
+            "role": "3. Opposition Whip (OW)",
+            "duties": ["Summarizes the debate from the Opposition side.", "Compares both teams' arguments.", "Explains why the Opposition should win.", "Does not introduce new substantive arguments."]
+          }
+        ]
+      }
+    ],
+    "summaryTable": [
+      ["Prime Minister", "Define motion and present Government case"],
+      ["Leader of Opposition", "Refute Government and present Opposition case"],
+      ["Deputy Prime Minister", "Rebut Opposition and strengthen Government"],
+      ["Deputy Leader of Opposition", "Rebut Government and strengthen Opposition"],
+      ["Government Whip", "Summarize and weigh debate for Government"],
+      ["Opposition Whip", "Summarize and weigh debate for Opposition"]
+    ],
+    "speakingOrder": [
+      ["Prime Minister (PM)", "5–7 min"], ["Leader of Opposition (LO)", "5–7 min"],
+      ["Deputy Prime Minister (DPM)", "5–7 min"], ["Deputy Leader of Opposition (DLO)", "5–7 min"],
+      ["Government Whip (GW)", "5–7 min"], ["Opposition Whip (OW)", "5–7 min"]
+    ],
+    "qanda": {
+      "title": "Points of Information (POIs) — the Q&A of AP",
+      "explanation": "As in BP, a POI is a short interjection offered by the opposing side during a speaker's speech, which the speaker may accept or decline.",
+      "rules": [
+        "POIs are offered during substantive speeches (PM, DPM, LO, DLO) but NOT during Whip speeches (GW, OW).",
+        "Each POI should take no more than 15 seconds; the speaker may accept or decline.",
+        "Exact timing and rules can vary slightly by tournament — always check the specific tournament's guidelines."
+      ]
+    },
+    "keyConcepts": [
+      "The Prime Minister defines the motion and sets the framework for the whole debate.",
+      "Deputy speakers rebut the other side while rebuilding and extending their own team's case.",
+      "Whip speakers summarize and weigh the debate — they must not raise new substantive arguments.",
+      "Unlike BP, there are only two teams, so the result is a straightforward Government-vs-Opposition decision.",
+      "Podium also offers two optional 4-minute Reply Speeches (Opposition Reply, then Government Reply) after the main 6 speeches — a summary-only round used by many tournaments to close out an AP debate."
+    ]
+  },
+
+  "ld": {
+    "id": "ld",
+    "name": "Lincoln-Douglas (LD)",
+    "tagline": "1-on-1, values and philosophy, not policy.",
+    "summary": "Lincoln-Douglas is a one-on-one debate format focused on values, ethics, and philosophy rather than detailed policy. There are only two debaters — no whip speakers and no closing teams.",
+    "sides": [
+      {
+        "role": "Affirmative (AFF)",
+        "duties": ["Supports the motion (resolution).", "Defines key terms if needed.", "Presents the value, value criterion, and main arguments.", "Defends the case throughout the debate."],
+        "responsibilities": ["Prove the resolution is true.", "Defend the value framework.", "Refute the Negative's case.", "Explain why their side best upholds the resolution."]
+      },
+      {
+        "role": "Negative (NEG)",
+        "duties": ["Opposes the motion.", "Challenges the Affirmative's framework and arguments.", "Presents an alternative value framework and counterarguments.", "Explains why the resolution should not be accepted."],
+        "responsibilities": ["Show the resolution is false or should not be accepted.", "Undermine the Affirmative's framework and arguments.", "Present reasons to reject the resolution.", "Demonstrate why their framework is preferable."]
+      }
+    ],
+    "speakingOrderTable": [
+      ["Affirmative Constructive (AC)", "Affirmative", "6 min"],
+      ["Cross-Examination", "Negative questions Affirmative", "3 min"],
+      ["Negative Constructive (NC)", "Negative", "7 min"],
+      ["Cross-Examination", "Affirmative questions Negative", "3 min"],
+      ["First Affirmative Rebuttal (1AR)", "Affirmative", "4 min"],
+      ["Negative Rebuttal (NR)", "Negative", "6 min"],
+      ["Second Affirmative Rebuttal (2AR)", "Affirmative", "3 min"]
+    ],
+    "speakingOrderNote": "Speech times vary slightly depending on the organization (e.g. NSDA, university, or local tournaments). Podium uses this standard 7-stage structure and timing.",
+    "qanda": {
+      "title": "Cross-Examination — the Q&A of LD",
+      "explanation": "Unlike BP/AP's brief POIs, LD uses two dedicated 3-minute Cross-Examination blocks where one debater directly questions the other in a genuine back-and-forth exchange.",
+      "rules": [
+        "After the Affirmative Constructive: the Negative cross-examines the Affirmative for 3 minutes.",
+        "After the Negative Constructive: the Affirmative cross-examines the Negative for 3 minutes.",
+        "Cross-examination is used to clarify the opponent's case, expose weaknesses, and set up material for the rebuttal speeches that follow.",
+        "In Podium, either side of a cross-ex block can be human (types the question/answer) or AI (generates one automatically) in any combination."
+      ]
+    },
+    "keyConcepts": [
+      "LD centers on a value (e.g. justice, liberty) and a value criterion (the standard used to weigh that value) rather than a policy proposal.",
+      "There are no whip speakers or closing teams — just one Affirmative and one Negative, each speaking for themselves throughout.",
+      "The two Cross-Examination blocks are the format's Q&A sessions — direct, timed questioning rather than the brief interjections used in BP/AP.",
+      "The Affirmative speaks first and last (AC and 2AR), giving them the final word — balanced by the Negative getting the longest single speech (NC, 7 minutes)."
+    ]
+  }
+}
