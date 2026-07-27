@@ -123,8 +123,8 @@ critiqued exactly as a real adjudicator would.
 
 | | |
 |---|---|
-| **Setup — choose a format** <br/> ![Format selection](screenshots/setup-format.jpeg) | **Setup — lineup & roster** <br/> ![Lineup selection](screenshots/setup-lineup.jpeg) |
-| **In-app Format Guide** <br/> ![Format guide](screenshots/guide.jpeg) | **Live debate — timer & composer** <br/> ![Debate screen](screenshots/debate-screen.jpeg) |
+| **Setup — choose a format** <br/> ![Format selection](setup-format.jpeg) | **Setup — lineup & roster** <br/> ![Lineup selection](setup-lineup.jpeg) |
+| **In-app Format Guide** <br/> ![Format guide](screenshots/guide.jpeg) | **Live debate — timer & composer** <br/> ![Debate screen](debate-screen.jpeg) |
 | **Video input in action** <br/> ![Video recording](screenshots/debate-video.jpeg) | **Point of Information modal** <br/> ![POI modal](screenshots/poi-modal.jpeg) |
 | **Cross-examination (LD)** <br/> ![Cross-ex modal](screenshots/crossex-modal.jpeg) | **Results — BP team podium (1st–4th)** <br/> ![BP podium results](screenshots/results-bp-podium.jpeg) |
 | **Results — Best Speaker & rankings** <br/> ![Best speaker card](screenshots/results-best-speaker.jpeg) | **Critique session** <br/> ![Critique session](screenshots/critique-session.jpeg) |
