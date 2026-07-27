@@ -123,7 +123,7 @@ Here is what the application looks like in action.
 | **Speaker Scores** <br/> ![Speaker Scores](speaker-scores.jfif) | **Ranking of Speakers** <br/> ![Ranking](ranking_of_speakers.jfif) |
 | **Key Moments** <br/> ![Key Moments](key_moments.jfif) | **Fallacy Library** <br/> ![Library](fallacy_library.jfif) |
 | **Dashboard** <br/> ![Dashboard](dashboard.jfif) | **History** <br/> ![History](history.jfif) |
-| **Light Mode** <br/> ![Light Mode](light_mode.jfif) | |
+| **Light Mode** <br/> ![Light Mode](light_mode.jfif) | || **Select Number of Human Speakers** <br/> ![Select Human Speakers](select_num_of_human_speaker.jfif) | **Export Result** <br/> ![Export Result](export_result.jfif) |
 
 ---
 
