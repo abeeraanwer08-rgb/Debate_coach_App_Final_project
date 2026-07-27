@@ -29,39 +29,44 @@ Information, cross-examination, text/voice/video input, AI judging out of
 ## 📑 Table of Contents
 
 1. [Overview](#-overview)
+ [Live Demo](#-live-demo)
    - [The Problem It Solves, and For Whom](#the-problem-it-solves-and-for-whom)
-   - [Live Demo](#-live-demo)
-2. [Screenshots](#-screenshots)
-3. [Feature Summary](#-feature-summary)
-4. [Debate Formats](#-debate-formats)
+   -
+3. [Screenshots](#-screenshots)
+4. [Feature Summary](#-feature-summary)
+5. [Debate Formats](#-debate-formats)
    - [British Parliamentary](#1️⃣-british-parliamentary-bp)
    - [Asian Parliamentary](#2️⃣-asian-parliamentary)
    - [Lincoln-Douglas](#3️⃣-lincoln-douglas-ld)
-5. [In-App Format Guide](#-in-app-format-guide)
-6. [Lineup Modes — Who's Speaking](#-lineup-modes--whos-speaking)
-7. [Input Methods](#️-input-methods)
+6. [In-App Format Guide](#-in-app-format-guide)
+7. [Lineup Modes — Who's Speaking](#-lineup-modes--whos-speaking)
+8. [Input Methods](#️-input-methods)
    - [Text](#-text-input)
    - [Voice](#-voice-input)
    - [Video](#-video-input)
-8. [Live Debate Mechanics](#-live-debate-mechanics)
+9. [Live Debate Mechanics](#-live-debate-mechanics)
    - [Timer System](#⏱️-timer-system)
    - [Points of Information (POIs)](#-points-of-information-pois)
    - [Cross-Examination (LD)](#-cross-examination-lincoln-douglas-only)
    - [AI Voice Delivery](#-ai-voice-delivery)
    - [Live Fallacy Detector](#-live-fallacy-detector)
    - [Practice Mode](#-practice-mode)
-9. [AI Judging & Scoring](#-ai-judging--scoring)
+10. [AI Judging & Scoring](#-ai-judging--scoring)
    - [Example: the actual judging system prompt](#example-the-actual-judging-system-prompt)
-10. [Critique Session](#-critique-session)
-11. [History, Dashboard & Library](#-history-dashboard--library)
-12. [Export & Share](#-export--share)
-13. [Themes & Accessibility](#-themes--accessibility)
-14. [Tech Stack](#️-tech-stack)
-15. [Project Structure](#-project-structure)
-16. [Roadmap](#️-roadmap)
-17. [License](#-license)
+11. [Critique Session](#-critique-session)
+12. [History, Dashboard & Library](#-history-dashboard--library)
+13. [Export & Share](#-export--share)
+14. [Themes & Accessibility](#-themes--accessibility)
+15. [Tech Stack](#️-tech-stack)
+16. [Project Structure](#-project-structure)
+17. [Installation & Setup](#️-installation--setup)
+18. [Roadmap](#️-roadmap)
+19. [License](#-license)
 
 ---
+## Live Demo
+
+**Live URL:** [https://debate-coach-pro.lovable.app](https://debate-coach-pro.lovable.app)
 
 ## 📖 Overview
 
@@ -504,6 +509,61 @@ podium/
 │   └── script.js                # All frontend logic
 └── screenshots/                # 👉 drop your screenshots here (see above)
 ```
+## ⚙️ Installation
+
+### Prerequisites
+
+Before getting started, make sure you have:
+
+- **Node.js** (v18 or later recommended)
+- **npm** (comes with Node.js)
+- A **Groq API key**
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/podium.git
+cd podium
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure environment variables
+
+Create a `.env` file in the project root.
+
+```env
+GROQ_API_KEY=your_groq_api_key_here
+PORT=3000
+```
+
+Replace `your_groq_api_key_here` with your actual Groq API key.
+
+### 4. Start the development server
+
+```bash
+npm start
+```
+
+If your project uses a different script, use:
+
+```bash
+npm run dev
+```
+
+### 5. Open the application
+
+Visit:
+
+```
+http://localhost:3000
+```
+
+The frontend will load in your browser, and the backend will communicate with the Groq API for AI-powered debate generation, judging, critiques, and vision analysis.
 
 ---
 
