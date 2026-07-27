@@ -123,14 +123,14 @@ critiqued exactly as a real adjudicator would.
 
 | | |
 |---|---|
-| **Setup — choose a format** <br/> ![Format selection](screenshots/setup-format.png) | **Setup — lineup & roster** <br/> ![Lineup selection](screenshots/setup-lineup.png) |
-| **In-app Format Guide** <br/> ![Format guide](screenshots/guide.png) | **Live debate — timer & composer** <br/> ![Debate screen](screenshots/debate-screen.png) |
-| **Video input in action** <br/> ![Video recording](screenshots/debate-video.png) | **Point of Information modal** <br/> ![POI modal](screenshots/poi-modal.png) |
-| **Cross-examination (LD)** <br/> ![Cross-ex modal](screenshots/crossex-modal.png) | **Results — BP team podium (1st–4th)** <br/> ![BP podium results](screenshots/results-bp-podium.png) |
-| **Results — Best Speaker & rankings** <br/> ![Best speaker card](screenshots/results-best-speaker.png) | **Critique session** <br/> ![Critique session](screenshots/critique-session.png) |
-| **Dashboard & score charts** <br/> ![Dashboard](screenshots/dashboard.png) | **History** <br/> ![History](screenshots/history.png) |
-| **Fallacy library** <br/> ![Library](screenshots/library.png) | **Dark / Light mode** <br/> ![Dark mode](screenshots/theme-dark.png) |
-| **Light mode** <br/> ![Light mode](screenshots/theme-light.png) | |
+| **Setup — choose a format** <br/> ![Format selection](screenshots/setup-format.jpeg) | **Setup — lineup & roster** <br/> ![Lineup selection](screenshots/setup-lineup.jpeg) |
+| **In-app Format Guide** <br/> ![Format guide](screenshots/guide.jpeg) | **Live debate — timer & composer** <br/> ![Debate screen](screenshots/debate-screen.jpeg) |
+| **Video input in action** <br/> ![Video recording](screenshots/debate-video.jpeg) | **Point of Information modal** <br/> ![POI modal](screenshots/poi-modal.jpeg) |
+| **Cross-examination (LD)** <br/> ![Cross-ex modal](screenshots/crossex-modal.jpeg) | **Results — BP team podium (1st–4th)** <br/> ![BP podium results](screenshots/results-bp-podium.jpeg) |
+| **Results — Best Speaker & rankings** <br/> ![Best speaker card](screenshots/results-best-speaker.jpeg) | **Critique session** <br/> ![Critique session](screenshots/critique-session.jpeg) |
+| **Dashboard & score charts** <br/> ![Dashboard](screenshots/dashboard.jpeg) | **History** <br/> ![History](screenshots/history.jpeg) |
+| **Fallacy library** <br/> ![Library](screenshots/library.jpeg) | **Dark / Light mode** <br/> ![Dark mode](screenshots/theme-dark.jpeg) |
+| **Light mode** <br/> ![Light mode](screenshots/theme-light.jpeg) | |
 
 ---
 
